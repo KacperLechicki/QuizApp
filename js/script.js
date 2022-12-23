@@ -11,20 +11,18 @@ const quizBox = document.querySelector('.quiz-box');
 
 //show info
 const startQuiz = () => {
-	infoBox.style.display = 'block';
-	startQuizButton.style.display = 'none';
+	infoBox.classList.add('activeInfo')
 };
 
 //quit to start button
 const quitQuiz = () => {
-	infoBox.style.display = 'none';
-	startQuizButton.style.display = 'block';
+	infoBox.classList.remove('activeInfo');
 };
 
 //show questions
 const playQuiz = () => {
-	quizBox.style.display = 'block';
-	infoBox.style.display = 'none';
+	quizBox.classList.add('activeQuiz');
+	infoBox.classList.remove('activeInfo');
 };
 
 startQuizButton.addEventListener('click', startQuiz);

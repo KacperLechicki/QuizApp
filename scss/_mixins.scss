@@ -28,7 +28,7 @@
 }
 
 @mixin box {
-	width: 450px;
+	width: 550px;
 	padding: 15px 30px;
 	color: var(--black);
 	background-color: var(--lightBlue);
@@ -42,4 +42,11 @@
 	margin-bottom: 10px;
 	height: 40px;
 	font-size: 2rem;
+}
+
+@mixin active {
+	opacity: 1;
+	pointer-events: auto;
+	transform: translate(-50%, -50%) scale(1);
+	z-index: 5;
 }

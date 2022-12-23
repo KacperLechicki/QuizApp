@@ -81,9 +81,11 @@ body {
   }
   80% {
     transform: scale(1.8);
+    opacity: 0;
   }
   85% {
     transform: scale(1.85);
+    opacity: 0;
   }
   90% {
     transform: scale(1.9);
@@ -151,9 +153,11 @@ body {
   }
   80% {
     transform: scale(1.8);
+    opacity: 0;
   }
   85% {
     transform: scale(1.85);
+    opacity: 0;
   }
   90% {
     transform: scale(1.9);
@@ -185,8 +189,8 @@ body {
   max-height: 66px;
   font-size: 2.5rem;
   border: 1px solid var(--white);
-  border-radius: 12px;
-  box-shadow: 3px 1px 8px rgba(0, 0, 0, 0.299);
+  border-radius: 8px;
+  box-shadow: 5px 3px 8px rgba(0, 0, 0, 0.399);
   transition: border 0.3s, background-color 0.3s, color 0.3s;
 }
 .start-btn:hover {
@@ -209,23 +213,30 @@ body {
   border-radius: 12px;
 }
 .start-btn:hover::before {
-  -webkit-animation: pulse 1.5s ease-in-out;
-          animation: pulse 1.5s ease-in-out;
+  -webkit-animation: pulse 1.5s ease-in-out forwards;
+          animation: pulse 1.5s ease-in-out forwards;
 }
 
 .info {
-  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 450px;
+  width: 550px;
   padding: 15px 30px;
   color: var(--black);
   background-color: var(--lightBlue);
   border-radius: 12px;
   box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.468);
-  height: 450px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+.info.activeInfo {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 5;
 }
 .info-title {
   display: flex;
@@ -240,7 +251,7 @@ body {
   padding: 10px 0;
   list-style-position: inside;
   list-style-type: square;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   border-top: 1px solid var(--seaBlue);
   border-bottom: 1px solid var(--seaBlue);
 }
@@ -290,12 +301,11 @@ body {
 }
 
 .quiz-box {
-  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 450px;
+  width: 550px;
   padding: 15px 30px;
   color: var(--black);
   background-color: var(--lightBlue);
@@ -303,6 +313,15 @@ body {
   box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.468);
   padding: 0;
   height: 450px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+.quiz-box.activeQuiz {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 5;
 }
 .quiz-box header {
   display: flex;
@@ -315,7 +334,7 @@ body {
   align-items: center;
   padding: 5px 20px;
   width: 100%;
-  height: 60px;
+  height: 70px;
   font-size: 1.6rem;
   background-color: var(--seaBlue);
   border-radius: 6px 6px 0 0;
@@ -326,11 +345,12 @@ body {
 .quiz-box header .title {
   font-weight: bold;
   font-size: 2rem;
+  letter-spacing: 0.5px;
 }
 .quiz-box header .timer {
   display: flex;
   align-items: center;
-  padding: 6px 14px;
+  padding: 4px 10px;
   background-color: var(--lightBlue);
   border-radius: 6px;
 }
@@ -431,7 +451,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 450px;
+  width: 550px;
   padding: 15px 30px;
   color: var(--black);
   background-color: var(--lightBlue);
@@ -523,6 +543,11 @@ body {
   .result-box .buttons button {
     padding: 5px 10px;
     font-size: 1.4rem;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .info {
+    width: 300px;
   }
 }
 @media only screen and (max-width: 665px) {
