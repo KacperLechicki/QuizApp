@@ -14,21 +14,21 @@
 		border-radius: 12px;
 		box-shadow: 3px 1px 8px rgba(0, 0, 0, 0.299);
 		transition: border 0.3s, background-color 0.3s, color 0.3s;
-	}
 
-	&-btn::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 100%;
-		width: 100%;
-		border: 1px solid var(--white);
-		border-radius: 12px;
-	}
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			border: 1px solid var(--white);
+			border-radius: 12px;
+		}
 
-	&-btn:hover &-btn::before {
-		animation: pulse 3s ease-in-out;
+		&:hover::before {
+			animation: pulse 1.5s ease-in-out;
+		}
 	}
 }
 
