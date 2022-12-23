@@ -176,6 +176,7 @@ body {
 .quiz-box .section {
   padding: 15px 30px;
 }
+
 @media only screen and (max-width: 356px) {
   .start-btn {
     font-size: 2rem;
