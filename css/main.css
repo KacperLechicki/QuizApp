@@ -26,4 +26,114 @@ body {
   --darkRed: #c81d25;
   --black: black;
   --white: whitesmoke;
+}
+
+.start-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-weight: bold;
+  color: var(--darkBlue);
+  background-color: var(--white);
+  border: 1px solid var(--darkBlue);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+  padding: 15px 30px;
+  max-height: 66px;
+  font-size: 2.5rem;
+  border: 1px solid var(--white);
+  border-radius: 12px;
+  box-shadow: 3px 1px 8px rgba(0, 0, 0, 0.299);
+  transition: border 0.3s, background-color 0.3s, color 0.3s;
+}
+.start-btn:hover {
+  color: var(--white);
+  background-color: var(--darkBlue);
+}
+.start-btn:active {
+  background-color: #082f45;
+  box-shadow: inset 3px 5px 5px rgba(0, 0, 0, 0.452);
+  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.264);
+}
+
+.info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 280px;
+  padding: 15px 30px;
+  color: var(--black);
+  background-color: var(--lightBlue);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.info-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  height: 40px;
+  font-size: 2rem;
+  font-weight: bold;
+  border-bottom: 1px solid var(--seaBlue);
+}
+.info-list {
+  margin-bottom: 20px;
+  list-style-position: inside;
+  list-style-type: square;
+  font-size: 1.8rem;
+}
+.info-list li {
+  margin-bottom: 8px;
+}
+.info-list li::marker {
+  font-weight: bold;
+}
+.info-list li span {
+  font-weight: bold;
+}
+.info .buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+.info .buttons button {
+  text-align: center;
+  font-weight: bold;
+  color: var(--darkBlue);
+  background-color: var(--white);
+  border: 1px solid var(--darkBlue);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+  padding: 7px 14px;
+}
+.info .buttons button:hover {
+  color: var(--white);
+  background-color: var(--darkBlue);
+}
+.info .buttons button:active {
+  background-color: #082f45;
+  box-shadow: inset 3px 5px 5px rgba(0, 0, 0, 0.452);
+  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.264);
+}
+.info .buttons .continue {
+  color: var(--white);
+  background-color: var(--darkBlue);
+}
+.info .buttons .quit {
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 356px) {
+  .start-btn {
+    font-size: 2rem;
+  }
+}
+@media only screen and (max-width: 665px) {
+  .info-list {
+    font-size: 1.4rem;
+  }
 }/*# sourceMappingURL=main.css.map */
