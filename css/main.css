@@ -233,6 +233,7 @@ body {
   margin-bottom: 10px;
   height: 40px;
   font-size: 2rem;
+  font-weight: bold;
 }
 .info-list {
   margin-bottom: 20px;
@@ -369,7 +370,13 @@ body {
   padding: 5px 20px;
   height: 50px;
   background-color: var(--white);
+  border: 1px solid #345c61;
   border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.quiz-box section .option-list .option:hover {
+  background-color: rgba(52, 92, 97, 0.1529411765);
 }
 .quiz-box section .option-list .option .icon {
   cursor: pointer;
@@ -419,6 +426,82 @@ body {
   text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.264);
 }
 
+.result-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  padding: 15px 30px;
+  color: var(--black);
+  background-color: var(--lightBlue);
+  border-radius: 12px;
+  box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.468);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+.result-box .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.result-box .icon i {
+  font-size: 6rem;
+  color: var(--darkBlue);
+}
+.result-box p {
+  font-size: 1.8rem;
+}
+.result-box .result-text {
+  font-weight: bold;
+}
+.result-box .score-text {
+  margin-bottom: 20px;
+}
+.result-box .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.result-box .buttons button {
+  text-align: center;
+  font-weight: bold;
+  color: var(--darkBlue);
+  background-color: var(--white);
+  border: 1px solid var(--darkBlue);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+  padding: 7px 14px;
+}
+.result-box .buttons button:hover {
+  color: var(--white);
+  background-color: var(--darkBlue);
+}
+.result-box .buttons button:active {
+  background-color: #082f45;
+  box-shadow: inset 3px 5px 5px rgba(0, 0, 0, 0.452);
+  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.264);
+}
+.result-box .buttons .replay {
+  margin-left: 10px;
+  color: var(--white);
+  background-color: var(--darkBlue);
+}
+.result-box .buttons .replay:hover {
+  background-color: var(--darkBlueHover);
+  border: 1px solid var(--darkBlueHover);
+}
+
 @media only screen and (max-width: 356px) {
   .start-btn {
     font-size: 2rem;
@@ -430,6 +513,16 @@ body {
 @media only screen and (max-width: 475px) {
   .quiz-box {
     width: 300px;
+  }
+  .result-box {
+    width: 300px;
+  }
+  .result-box p {
+    font-size: 1.6rem;
+  }
+  .result-box .buttons button {
+    padding: 5px 10px;
+    font-size: 1.4rem;
   }
 }
 @media only screen and (max-width: 665px) {

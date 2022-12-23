@@ -37,9 +37,13 @@
 	@include bodyCenter;
 	@include box;
 	height: 450px;
+	// opacity: 0;
+	// pointer-events: none;
+	// transform: translate(-50%, -50%) scale(0.9);
 
 	&-title {
 		@include titleHeader;
+		font-weight: bold;
 	}
 
 	&-list {
@@ -95,6 +99,9 @@
 	@include box;
 	padding: 0;
 	height: 450px;
+	// opacity: 0;
+	// pointer-events: none;
+	// transform: translate(-50%, -50%) scale(0.9);
 
 	header {
 		@include titleHeader;
@@ -163,7 +170,14 @@
 				padding: 5px 20px;
 				height: 50px;
 				background-color: var(--white);
+				border: 1px solid #345c61;
 				border-radius: 5px;
+				cursor: pointer;
+				transition: background-color 0.3s;
+
+				&:hover {
+					background-color: #345c6127;
+				}
 
 				.icon {
 					cursor: pointer;
@@ -207,6 +221,67 @@
 	}
 }
 
+.result-box {
+	@include bodyCenter;
+	@include box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 300px;
+	text-align: center;
+	opacity: 0;
+	pointer-events: none;
+	transform: translate(-50%, -50%) scale(0.9);
+
+	.icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 20px;
+
+		i {
+			font-size: 6rem;
+			color: var(--darkBlue);
+		}
+	}
+
+	p {
+		font-size: 1.8rem;
+	}
+
+	.result-text {
+		font-weight: bold;
+	}
+
+	.score-text {
+		margin-bottom: 20px;
+	}
+
+	.buttons {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 10px;
+
+		button {
+			@include button;
+			padding: 7px 14px;
+		}
+
+		.replay {
+			margin-left: 10px;
+			color: var(--white);
+			background-color: var(--darkBlue);
+
+			&:hover {
+				background-color: var(--darkBlueHover);
+				border: 1px solid var(--darkBlueHover);
+			}
+		}
+	}
+}
+
 //----------------------------------------------------------------
 //----------------------------------------------------------------
 //----------------------------------------------------------------
@@ -234,6 +309,21 @@
 @media only screen and(max-width: 475px) {
 	.quiz-box {
 		width: 300px;
+	}
+
+	.result-box {
+		width: 300px;
+
+		p {
+			font-size: 1.6rem;
+		}
+
+		.buttons {
+			button {
+				padding: 5px 10px;
+				font-size: 1.4rem;
+			}
+		}
 	}
 }
 

@@ -21,6 +21,7 @@ const quitQuiz = () => {
 	startQuizButton.style.display = 'block';
 };
 
+//show questions
 const playQuiz = () => {
 	quizBox.style.display = 'block';
 	infoBox.style.display = 'none';
