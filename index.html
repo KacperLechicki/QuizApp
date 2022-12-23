@@ -24,18 +24,51 @@
 
         <div class="info-list">
             <ol>
-                <li>You will have only <span>20 seconds</span> per each question.</li>
-                <li>Once you select your answer, you can't select another.</li>
-                <li>You can't select any option once time goes off.</li>
-                <li>You can't exit from the quiz while you're playing.</li>
-                <li>You'll get points on the basis of your correct answers.</li>
+                <li class="info-list-item">You will have only <span>20 seconds</span> per each question.</li>
+                <li class="info-list-item">Once you select your answer, you can't select another.</li>
+                <li class="info-list-item">You can't select any option once time goes off.</li>
+                <li class="info-list-item">You can't exit from the quiz while you're playing.</li>
+                <li class="info-list-item">You'll get points on the basis of your correct answers.</li>
             </ol>
         </div>
-        
+
         <div class="buttons">
             <button class="quit">Quit</button>
             <button class="continue">Continue</button>
         </div>
+    </div>
+
+    <div class="quiz-box">
+        <header>
+            <div class="title">QuizApp</div>
+            <div class="timer">
+                <div class="time-text">Time left</div>
+                <div class="timer-sec">20</div>
+            </div>
+        </header>
+
+        <section>
+            <div class="question-text">
+                <p class="question">Who painted the Mona Lisa?</p>
+            </div>
+            <div class="option-list">
+                <p class="option">Vincent van Gogh</p>
+                <div class="icon cross"><i class="fas fa-times"></i></div>
+                <p class="option">Pablo Picasso</p>
+                <div class="icon cross"><i class="fas fa-times"></i></div>
+                <p class="option">Leonardo da Vinci</p>
+                <div class="icon tick"><i class="fas fa-check"></i></div>
+                <p class="option">Claude Monet</p>
+                <div class="icon cross"><i class="fas fa-times"></i></div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="total-questions">
+                <p class="total-questions-info">2 of 5 questions</p>
+            </div>
+            <button class="next">Next</button>
+        </footer>
     </div>
 
     <script src="./js/script.js"></script>

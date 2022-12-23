@@ -17,21 +17,12 @@
 }
 
 .info {
+	display: none;
 	@include bodyCenter;
-	min-width: 280px;
-	padding: 15px 30px;
-	color: var(--black);
-	background-color: var(--lightBlue);
-	border-radius: 12px;
-	overflow: hidden;
+	@include box;
 
 	&-title {
-		display: flex;
-		align-items: center;
-		margin-bottom: 20px;
-		height: 40px;
-		font-size: 2rem;
-		font-weight: bold;
+		@include titleHeader;
 	}
 
 	&-list {
@@ -43,7 +34,7 @@
 		border-top: 1px solid var(--seaBlue);
 		border-bottom: 1px solid var(--seaBlue);
 
-		li {
+		&-item {
 			margin-bottom: 8px;
 
 			&::marker {
@@ -77,6 +68,41 @@
 
 		.quit {
 			margin-right: 10px;
+		}
+	}
+}
+
+.quiz-box {
+	@include bodyCenter;
+	@include box;
+	padding: 0;
+
+	header {
+		@include titleHeader;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 5px 10px;
+		width: 100%;
+		height: 50px;
+		background-color: var(--lightBlue);
+		border-radius: 5px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.173);
+		overflow: hidden;
+
+		.timer {
+			display: flex;
+			align-items: center;
+
+			&-sec {
+				margin-left: 10px;
+			}
+		}
+	}
+
+	.section {
+		padding: 15px 30px;
+		.question {
 		}
 	}
 }

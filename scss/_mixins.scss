@@ -20,9 +20,27 @@
 		background-color: var(--darkBlue);
 	}
 
-    &:active {
-        background-color: #082f45;
-        box-shadow: inset 3px 5px 5px rgba(0, 0, 0, 0.452);
-        text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.264);
-    }
+	&:active {
+		background-color: #082f45;
+		box-shadow: inset 3px 5px 5px rgba(0, 0, 0, 0.452);
+		text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.264);
+	}
+}
+
+@mixin box {
+	width: clamp(280px, 400px, 400px);
+	padding: 15px 30px;
+	color: var(--black);
+	background-color: var(--lightBlue);
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+@mixin titleHeader {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+	height: 40px;
+	font-size: 2rem;
+	font-weight: bold;
 }
