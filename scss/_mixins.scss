@@ -28,19 +28,18 @@
 }
 
 @mixin box {
-	width: clamp(280px, 400px, 400px);
+	width: 450px;
 	padding: 15px 30px;
 	color: var(--black);
 	background-color: var(--lightBlue);
 	border-radius: 12px;
-	overflow: hidden;
+	box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.468);
 }
 
 @mixin titleHeader {
 	display: flex;
 	align-items: center;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	height: 40px;
 	font-size: 2rem;
-	font-weight: bold;
 }
