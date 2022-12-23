@@ -20,6 +20,7 @@ body {
 :root {
   --backgroundGradient: radial-gradient(circle at center, #0b3954, #11405c);
   --darkBlue: #0b3954;
+  --darkBlueHover: #1c5271;
   --seaBlue: #087e8b;
   --lightBlue: #bfd7ea;
   --lightRed: #ff5a5f;
@@ -78,13 +79,15 @@ body {
   height: 40px;
   font-size: 2rem;
   font-weight: bold;
-  border-bottom: 1px solid var(--seaBlue);
 }
 .info-list {
   margin-bottom: 20px;
+  padding: 10px 0;
   list-style-position: inside;
   list-style-type: square;
   font-size: 1.8rem;
+  border-top: 1px solid var(--seaBlue);
+  border-bottom: 1px solid var(--seaBlue);
 }
 .info-list li {
   margin-bottom: 8px;
@@ -123,6 +126,10 @@ body {
   color: var(--white);
   background-color: var(--darkBlue);
 }
+.info .buttons .continue:hover {
+  background-color: var(--darkBlueHover);
+  border: 1px solid var(--darkBlueHover);
+}
 .info .buttons .quit {
   margin-right: 10px;
 }
@@ -134,6 +141,10 @@ body {
 }
 @media only screen and (max-width: 665px) {
   .info-list {
+    font-size: 1.4rem;
+  }
+  .info .buttons button {
+    padding: 5px 10px;
     font-size: 1.4rem;
   }
 }/*# sourceMappingURL=main.css.map */

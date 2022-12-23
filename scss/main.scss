@@ -1,78 +1,84 @@
-@use "reset" as *;
-@use "colors" as *;
-@use "mixins" as *;
+@use 'reset' as *;
+@use 'colors' as *;
+@use 'mixins' as *;
 
 .start {
-    &-btn {
-        @include bodyCenter;
-        @include button;
-        padding: 15px 30px;
-        max-height: 66px;
-        font-size: 2.5rem;
-        border: 1px solid var(--white);
-        border-radius: 12px;
-        box-shadow: 3px 1px 8px rgba(0, 0, 0, 0.299);
-        transition: border 0.3s, background-color 0.3s, color 0.3s;
-    }
+	&-btn {
+		@include bodyCenter;
+		@include button;
+		padding: 15px 30px;
+		max-height: 66px;
+		font-size: 2.5rem;
+		border: 1px solid var(--white);
+		border-radius: 12px;
+		box-shadow: 3px 1px 8px rgba(0, 0, 0, 0.299);
+		transition: border 0.3s, background-color 0.3s, color 0.3s;
+	}
 }
 
 .info {
-    @include bodyCenter;
-    min-width: 280px;
-    padding: 15px 30px;
-    // width: 650px;
-    color: var(--black);
-    background-color: var(--lightBlue);
-    border-radius: 12px;
-    overflow: hidden;
+	@include bodyCenter;
+	min-width: 280px;
+	padding: 15px 30px;
+	color: var(--black);
+	background-color: var(--lightBlue);
+	border-radius: 12px;
+	overflow: hidden;
 
-    &-title {
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-        height: 40px;
-        font-size: 2rem;
-        font-weight: bold;
-        border-bottom: 1px solid var(--seaBlue);
-    }
+	&-title {
+		display: flex;
+		align-items: center;
+		margin-bottom: 20px;
+		height: 40px;
+		font-size: 2rem;
+		font-weight: bold;
+	}
 
-    &-list {
-        margin-bottom: 20px;
-        list-style-position: inside;
-        list-style-type: square;
-        font-size: 1.8rem;
+	&-list {
+		margin-bottom: 20px;
+		padding: 10px 0;
+		list-style-position: inside;
+		list-style-type: square;
+		font-size: 1.8rem;
+		border-top: 1px solid var(--seaBlue);
+		border-bottom: 1px solid var(--seaBlue);
 
-        li {
-            margin-bottom: 8px;
+		li {
+			margin-bottom: 8px;
 
-            &::marker {
-                font-weight: bold;
-            }
+			&::marker {
+				font-weight: bold;
+			}
 
-            span {
-                font-weight: bold;
-            }
-        }
-    }
+			span {
+				font-weight: bold;
+			}
+		}
+	}
 
-    .buttons {
-        display: flex;
-        justify-content: flex-end;
+	.buttons {
+		display: flex;
+		justify-content: flex-end;
 
-        button {
-            @include button;
-            padding: 7px 14px;
-        }
+		button {
+			@include button;
+			padding: 7px 14px;
+		}
 
-        .continue {
-            color: var(--white);
-            background-color: var(--darkBlue);
-        }
+		.continue {
+			color: var(--white);
+			background-color: var(--darkBlue);
 
-        .quit {
-            margin-right: 10px;
-        }
-    }
+			&:hover {
+				background-color: var(--darkBlueHover);
+				border: 1px solid var(--darkBlueHover);
+			}
+		}
+
+		.quit {
+			margin-right: 10px;
+		}
+	}
 }
 
 //----------------------------------------------------------------
@@ -82,17 +88,24 @@
 //----------------------------------------------------------------
 
 @media only screen and (max-width: 356px) {
-    .start {
-        &-btn {
-            font-size: 2rem;
-        }
-    }
+	.start {
+		&-btn {
+			font-size: 2rem;
+		}
+	}
 }
 
 @media only screen and (max-width: 665px) {
-    .info {
-        &-list {
-            font-size: 1.4rem;
-        }
-    }
+	.info {
+		&-list {
+			font-size: 1.4rem;
+		}
+
+		.buttons {
+			button {
+				padding: 5px 10px;
+				font-size: 1.4rem;
+			}
+		}
+	}
 }
