@@ -14,4 +14,16 @@ body {
   min-height: 100vh;
   font-family: "Open Sans", sans-serif;
   font-size: 1.6rem;
+  background-image: var(--backgroundGradient);
+}
+
+:root {
+  --backgroundGradient: radial-gradient(circle at center, #0b3954, #11405c);
+  --darkBlue: #0b3954;
+  --seaBlue: #087e8b;
+  --lightBlue: #bfd7ea;
+  --lightRed: #ff5a5f;
+  --darkRed: #c81d25;
+  --black: black;
+  --white: whitesmoke;
 }/*# sourceMappingURL=main.css.map */
