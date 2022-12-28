@@ -12,6 +12,33 @@ const quizBox = document.querySelector('.quiz-box');
 
 // lets
 let questions_count = 0;
+let questions_numb = 1;
+
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+
+//question counter
+const handleCounter = (index) => {
+	const counter = document.querySelector('.total-questions');
+	let counterValue = `<p class="total-questions-info"><span>${index}</span> of <span>${questions.length}</span> questions</p>`;
+
+	counter.innerHTML = counterValue;
+};
+
+//if next button is clicked
+const handleNext = () => {
+	if (questions_count < questions.length - 1) {
+		questions_count++;
+		questions_numb++;
+		showQuestions(questions_count);
+		handleCounter(questions_numb);
+	} else {
+		console.log('Quiz completed');
+	}
+};
 
 //show info
 const startQuiz = () => {
@@ -27,14 +54,15 @@ const quitQuiz = () => {
 const playQuiz = () => {
 	quizBox.classList.add('activeQuiz');
 	infoBox.classList.remove('activeInfo');
-	showQuestions(2);
+	showQuestions(0);
+	handleCounter(1);
 };
 
 //getting questions and options from array
 const showQuestions = (index) => {
 	const questionText = document.querySelector('.question-text');
 	const optionList = document.querySelector('.option-list');
-	let questionTag = `<p class="question">${questions[index].question}</p>`;
+	let questionTag = `<p class="question">${questions[index].numb}. ${questions[index].question}</p>`;
 	let optionTag =
 		`<div class="option"><p class="option-text">${questions[index].options[0]}</p></div>` +
 		`<div class="option"><p class="option-text">${questions[index].options[1]}</p></div>` +
@@ -45,6 +73,13 @@ const showQuestions = (index) => {
 	optionList.innerHTML = optionTag;
 };
 
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+
 startQuizButton.addEventListener('click', startQuiz);
 quitButton.addEventListener('click', quitQuiz);
 continueButton.addEventListener('click', playQuiz);
+nextButton.addEventListener('click', handleNext);

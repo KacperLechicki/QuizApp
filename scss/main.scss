@@ -180,10 +180,16 @@
 				border: 1px solid #345c61;
 				border-radius: 5px;
 				cursor: pointer;
-				transition: background-color 0.3s;
+				transition: background-color 0.2s;
 
 				&:hover {
 					background-color: #345c6127;
+				}
+
+				&:active {
+					background-color: #32595e68;
+					box-shadow: inset 3px 5px 10px rgba(0, 0, 0, 0.259);
+					text-shadow: 3px 5px 10px rgba(0, 0, 0, 0.172);
 				}
 
 				.icon {
@@ -224,7 +230,10 @@
 		margin-bottom: 20px;
 		padding: 0 30px;
 		width: 100%;
-		font-weight: bold;
+
+		span {
+			font-weight: bold;
+		}
 
 		button {
 			@include button;

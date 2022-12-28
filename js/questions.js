@@ -25,7 +25,7 @@ let questions = [
 		answer: '0',
 	},
 	{
-		question: "What is Scooby Doo's full name",
+		question: "What is Scooby Doo's full name?",
 		numb: 4,
 		options: [
 			'Scooby van Dooby',
