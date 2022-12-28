@@ -71,6 +71,23 @@ const showQuestions = (index) => {
 
 	questionText.innerHTML = questionTag;
 	optionList.innerHTML = optionTag;
+
+	const options = optionList.querySelectorAll('.option');
+	for (let option of options) {
+		option.setAttribute('onclick', 'optionSelected(this)');
+	}
+};
+
+const optionSelected = (answer) => {
+	let userAnswer = answer.textContent;
+
+	let correctAnswer = questions[questions_count].answer;
+
+	if (userAnswer == correctAnswer) {
+		console.log('Answer is correct');
+	} else {
+		console.log('Answer is not correct');
+	}
 };
 
 //----------------------------------------------------------------
