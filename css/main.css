@@ -118,16 +118,16 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  font-weight: bold;
   color: var(--darkBlue);
   background-color: var(--white);
   border: 1px solid var(--darkBlue);
   border-radius: 5px;
   cursor: pointer;
   transition: color 0.3s, background-color 0.3s;
-  padding: 15px 30px;
+  padding: 12px 25px;
   max-height: 66px;
   font-size: 2.5rem;
+  font-weight: bold;
   border: 1px solid var(--white);
   border-radius: 8px;
   box-shadow: 5px 3px 8px rgba(0, 0, 0, 0.399);
@@ -210,7 +210,6 @@ body {
 }
 .info .buttons button {
   text-align: center;
-  font-weight: bold;
   color: var(--darkBlue);
   background-color: var(--white);
   border: 1px solid var(--darkBlue);
@@ -218,6 +217,7 @@ body {
   cursor: pointer;
   transition: color 0.3s, background-color 0.3s;
   padding: 7px 14px;
+  font-size: 1.4rem;
 }
 .info .buttons button:hover {
   color: var(--white);
@@ -395,7 +395,6 @@ body {
 }
 .quiz-box footer button {
   text-align: center;
-  font-weight: bold;
   color: var(--darkBlue);
   background-color: var(--white);
   border: 1px solid var(--darkBlue);
@@ -403,6 +402,7 @@ body {
   cursor: pointer;
   transition: color 0.3s, background-color 0.3s;
   padding: 7px 14px;
+  font-size: 1.4rem;
 }
 .quiz-box footer button:hover {
   color: var(--white);
@@ -462,7 +462,6 @@ body {
 }
 .result-box .buttons button {
   text-align: center;
-  font-weight: bold;
   color: var(--darkBlue);
   background-color: var(--white);
   border: 1px solid var(--darkBlue);
