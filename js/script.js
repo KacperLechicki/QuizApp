@@ -10,12 +10,15 @@ const nextButton = document.querySelector('.next');
 const infoBox = document.querySelector('.info');
 const quizBox = document.querySelector('.quiz-box');
 const optionList = document.querySelector('.option-list');
+const checkIcon = '<div class="icon check"><i class="fas fa-check"></i></div>';
+const crossIcon = '<div class="icon cross"><i class="fas fa-times"></i></div>';
+const timerCount = document.querySelector('.timer-sec');
 
 // lets
 let questions_count = 0;
 let questions_numb = 1;
-const checkIcon = '<div class="icon check"><i class="fas fa-check"></i></div>';
-const crossIcon = '<div class="icon cross"><i class="fas fa-times"></i></div>';
+let clock;
+let timeValue = 10;
 
 //----------------------------------------------------------------
 //----------------------------------------------------------------
@@ -38,6 +41,8 @@ const handleNext = () => {
 		questions_numb++;
 		showQuestions(questions_count);
 		handleCounter(questions_numb);
+		clearInterval(clock);
+		startTimer(timeValue);
 	} else {
 		console.log('Quiz completed');
 	}
@@ -59,6 +64,7 @@ const playQuiz = () => {
 	infoBox.classList.remove('activeInfo');
 	showQuestions(0);
 	handleCounter(1);
+	startTimer(10);
 };
 
 //getting questions and options from array
@@ -102,6 +108,15 @@ const optionSelected = (answer) => {
 			optionList.children[i].setAttribute('class', 'option correct');
 			optionList.children[i].insertAdjacentHTML('beforeend', checkIcon);
 		}
+	}
+};
+
+const startTimer = (time) => {
+	clock = setInterval(timer, 1000);
+
+	function timer() {
+		timerCount.textContent = time;
+		time--;
 	}
 };
 

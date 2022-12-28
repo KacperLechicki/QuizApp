@@ -144,6 +144,8 @@
 			&-sec {
 				margin-left: 8px;
 				padding: 1px 8px;
+				min-width: 35px;
+				min-height: 25px;
 				text-align: center;
 				color: (var(--lightBlue));
 				background-color: var(--darkBlue);
