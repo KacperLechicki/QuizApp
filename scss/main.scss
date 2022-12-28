@@ -198,24 +198,40 @@
 
 				.cross {
 					padding: 2px 8px;
-					background-color: rgb(200, 29, 37, 0.2);
-					border: 1px solid var(--darkRed);
+					color: rgb(53, 19, 8);
+					border: 1px solid rgb(53, 19, 8);
 					border-radius: 50%;
 
 					i {
-						color: var(--darkRed);
+						color: rgb(53, 19, 8);
 					}
 				}
 
 				.check {
 					padding: 2px 5px;
-					background-color: rgba(8, 126, 139, 0.2);
-					border: 1px solid var(--seaBlue);
+					color: rgb(6, 43, 30);
+					border: 1px solid rgb(6, 43, 30);
 					border-radius: 50%;
 
 					i {
-						color: var(--seaBlue);
+						color: rgb(6, 43, 30);
 					}
+				}
+
+				&.correct {
+					color: rgb(6, 43, 30);
+					background-color: rgba(8, 139, 52, 0.3);
+					border: 1px solid rgb(6, 43, 30);
+				}
+
+				&.incorrect {
+					color: rgb(53, 19, 8);
+					background-color: rgba(141, 57, 31, 0.3);
+					border: 1px solid rgb(53, 19, 8);
+				}
+
+				&.disabled {
+					pointer-events: none;
 				}
 			}
 		}

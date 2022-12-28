@@ -9,10 +9,13 @@ const nextButton = document.querySelector('.next');
 // boxes/forms
 const infoBox = document.querySelector('.info');
 const quizBox = document.querySelector('.quiz-box');
+const optionList = document.querySelector('.option-list');
 
 // lets
 let questions_count = 0;
 let questions_numb = 1;
+const checkIcon = '<div class="icon check"><i class="fas fa-check"></i></div>';
+const crossIcon = '<div class="icon cross"><i class="fas fa-times"></i></div>';
 
 //----------------------------------------------------------------
 //----------------------------------------------------------------
@@ -61,7 +64,6 @@ const playQuiz = () => {
 //getting questions and options from array
 const showQuestions = (index) => {
 	const questionText = document.querySelector('.question-text');
-	const optionList = document.querySelector('.option-list');
 	let questionTag = `<p class="question">${questions[index].numb}. ${questions[index].question}</p>`;
 	let optionTag =
 		`<div class="option"><p class="option-text">${questions[index].options[0]}</p></div>` +
@@ -80,13 +82,26 @@ const showQuestions = (index) => {
 
 const optionSelected = (answer) => {
 	let userAnswer = answer.textContent;
-
 	let correctAnswer = questions[questions_count].answer;
+	let allOptions = optionList.children.length;
 
 	if (userAnswer == correctAnswer) {
-		console.log('Answer is correct');
+		answer.classList.add('correct');
 	} else {
-		console.log('Answer is not correct');
+		answer.insertAdjacentHTML('beforeend', crossIcon);
+		answer.classList.add('incorrect');
+	}
+
+	//disable options after users choice
+	for (let i = 0; i < allOptions; i++) {
+		optionList.children[i].classList.add('disabled');
+	}
+
+	for (let i = 0; i < allOptions; i++) {
+		if (optionList.children[i].textContent == correctAnswer) {
+			optionList.children[i].setAttribute('class', 'option correct');
+			optionList.children[i].insertAdjacentHTML('beforeend', checkIcon);
+		}
 	}
 };
 
