@@ -526,6 +526,22 @@ body {
   .quiz-box {
     width: 300px;
   }
+  .quiz-box header {
+    height: 60px;
+  }
+  .quiz-box header .title {
+    font-size: 1.8rem;
+  }
+  .quiz-box header .timer {
+    padding: 3px 8px;
+    font-size: 1.4rem;
+  }
+  .quiz-box section .question-text .question {
+    font-size: 1.2rem;
+  }
+  .quiz-box section .option-list .option {
+    height: 45px;
+  }
   .result-box {
     width: 300px;
   }

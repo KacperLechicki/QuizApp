@@ -375,6 +375,33 @@
 @media only screen and(max-width: 475px) {
 	.quiz-box {
 		width: 300px;
+
+		header {
+			height: 60px;
+
+			.title {
+				font-size: 1.8rem;
+			}
+
+			.timer {
+				padding: 3px 8px;
+				font-size: 1.4rem;
+			}
+		}
+
+		section {
+			.question-text {
+				.question {
+					font-size: 1.2rem;
+				}
+			}
+
+			.option-list {
+				.option {
+					height: 45px;
+				}
+			}
+		}
 	}
 
 	.result-box {
