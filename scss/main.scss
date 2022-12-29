@@ -9,7 +9,7 @@
 		@include button;
 		padding: 12px 25px;
 		max-height: 66px;
-		font-size: 2.5rem;
+		font-size: 2.2rem;
 		font-weight: bold;
 		border: 1px solid var(--white);
 		border-radius: 8px;
@@ -130,7 +130,7 @@
 		.title {
 			font-weight: bold;
 			font-size: 2rem;
-			letter-spacing: 0.5px;
+			letter-spacing: 0.2px;
 		}
 
 		.timer {
@@ -160,13 +160,11 @@
 				background-color: var(--darkBlue);
 				border-radius: 4px;
 			}
-
 		}
 		.timeline {
 			position: absolute;
 			bottom: 0;
 			left: 0;
-			width: 50%;
 			height: 3px;
 			background-color: var(--darkBlue);
 		}
