@@ -170,6 +170,8 @@ const showResultBox = () => {
 
 const replayQuizHandle = () => {
 	restartValues();
+	quizBox.classList.add('activeQuiz');
+	result.classList.remove('activeResult');
 };
 
 const quitQuizHandle = () => {
@@ -178,11 +180,11 @@ const quitQuizHandle = () => {
 };
 
 const restartValues = () => {
-	let questions_count = 0;
-	let questions_numb = 1;
-	let timeValue = 15;
-	let timelineWidth = 0;
-	let userScore = 0;
+	questions_count = 0;
+	questions_numb = 1;
+	timeValue = 15;
+	timelineWidth = 0;
+	userScore = 0;
 	showQuestions(questions_count);
 	handleCounter(questions_numb);
 	clearInterval(clock);
@@ -190,8 +192,6 @@ const restartValues = () => {
 	clearInterval(clockLine);
 	startTimerLine(timelineWidth);
 	nextButton.style.visibility = 'hidden';
-	quizBox.classList.add('activeQuiz');
-	result.classList.remove('activeResult');
 };
 
 //----------------------------------------------------------------
