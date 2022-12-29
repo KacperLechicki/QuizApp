@@ -326,7 +326,6 @@ body {
   background-color: var(--darkBlue);
 }
 .quiz-box section {
-  margin-bottom: 5px;
   padding: 10px 30px;
 }
 .quiz-box section .question-text .question {
@@ -408,7 +407,7 @@ body {
   font-weight: bold;
 }
 .quiz-box footer button {
-  display: none;
+  visibility: hidden;
   text-align: center;
   color: var(--darkBlue);
   background-color: var(--white);
@@ -464,10 +463,14 @@ body {
   font-size: 1.8rem;
 }
 .result-box .result-text {
+  margin-bottom: 10px;
   font-weight: bold;
 }
 .result-box .score-text {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+.result-box .score-text span {
+  font-weight: bold;
 }
 .result-box .buttons {
   display: flex;
@@ -484,6 +487,7 @@ body {
   cursor: pointer;
   transition: color 0.3s, background-color 0.3s;
   padding: 7px 14px;
+  font-size: 1.4rem;
 }
 .result-box .buttons button:hover {
   color: var(--white);
@@ -502,6 +506,12 @@ body {
 .result-box .buttons .replay:hover {
   background-color: var(--darkBlueHover);
   border: 1px solid var(--darkBlueHover);
+}
+.result-box.activeResult {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 5;
 }
 
 @media only screen and (max-width: 356px) {

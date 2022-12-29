@@ -171,7 +171,6 @@
 	}
 
 	section {
-		margin-bottom: 5px;
 		padding: 10px 30px;
 
 		.question-text {
@@ -270,7 +269,7 @@
 		}
 
 		button {
-			display: none;
+			visibility: hidden;
 			@include button;
 			padding: 7px 14px;
 			font-size: 1.4rem;
@@ -308,11 +307,16 @@
 	}
 
 	.result-text {
+		margin-bottom: 10px;
 		font-weight: bold;
 	}
 
 	.score-text {
-		margin-bottom: 20px;
+		margin-bottom: 10px;
+
+		span {
+			font-weight: bold;
+		}
 	}
 
 	.buttons {
@@ -324,6 +328,7 @@
 		button {
 			@include button;
 			padding: 7px 14px;
+			font-size: 1.4rem;
 		}
 
 		.replay {
@@ -336,6 +341,10 @@
 				border: 1px solid var(--darkBlueHover);
 			}
 		}
+	}
+
+	&.activeResult {
+		@include active;
 	}
 }
 

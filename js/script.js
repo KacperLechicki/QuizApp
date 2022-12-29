@@ -5,6 +5,8 @@ const startQuizButton = document.querySelector('.start-btn');
 const quitButton = document.querySelector('.quit');
 const continueButton = document.querySelector('.continue');
 const nextButton = document.querySelector('.next');
+const replayButton = document.querySelector('.replay');
+const quitAllButton = document.querySelector('.quitAll');
 
 // boxes/forms
 const infoBox = document.querySelector('.info');
@@ -14,6 +16,7 @@ const checkIcon = '<div class="icon check"><i class="fas fa-check"></i></div>';
 const crossIcon = '<div class="icon cross"><i class="fas fa-times"></i></div>';
 const timerCount = document.querySelector('.timer-sec');
 const timeline = document.querySelector('.timeline');
+const result = document.querySelector('.result-box');
 
 // lets
 let questions_count = 0;
@@ -22,6 +25,7 @@ let clock;
 let clockLine;
 let timeValue = 15;
 let timelineWidth = 0;
+let userScore = 0;
 
 //----------------------------------------------------------------
 //----------------------------------------------------------------
@@ -39,7 +43,7 @@ const handleCounter = (index) => {
 
 //if next button is clicked
 const handleNext = () => {
-	nextButton.style.display = 'none';
+	nextButton.style.visibility = 'hidden';
 
 	if (questions_count < questions.length - 1) {
 		questions_count++;
@@ -52,6 +56,7 @@ const handleNext = () => {
 		startTimerLine(timelineWidth);
 	} else {
 		console.log('Quiz completed');
+		showResultBox();
 	}
 };
 
@@ -67,10 +72,11 @@ const quitQuiz = () => {
 
 //show questions
 const playQuiz = () => {
+	userScore = 0;
 	quizBox.classList.add('activeQuiz');
 	infoBox.classList.remove('activeInfo');
-	showQuestions(0);
-	handleCounter(1);
+	showQuestions(questions_count);
+	handleCounter(questions_numb);
 	startTimer(timeValue);
 	clearInterval(clockLine);
 	startTimerLine(timelineWidth);
@@ -105,6 +111,7 @@ const optionSelected = (answer) => {
 
 	if (userAnswer == correctAnswer) {
 		answer.classList.add('correct');
+		userScore++;
 	} else {
 		answer.insertAdjacentHTML('beforeend', crossIcon);
 		answer.classList.add('incorrect');
@@ -119,7 +126,7 @@ const optionSelected = (answer) => {
 		optionList.children[i].classList.add('disabled');
 	}
 
-	nextButton.style.display = 'block';
+	nextButton.style.visibility = 'visible';
 };
 
 const startTimer = (time) => {
@@ -153,6 +160,40 @@ const startTimerLine = (time) => {
 	}
 };
 
+const showResultBox = () => {
+	infoBox.classList.remove('activeInfo');
+	quizBox.classList.remove('activeQuiz');
+	result.classList.add('activeResult');
+	const scoreText = result.querySelector('.score-text');
+	scoreText.innerHTML = `Your score is <span>${userScore}</span> out of <span>${questions.length}</span>`;
+};
+
+const replayQuizHandle = () => {
+	restartValues();
+};
+
+const quitQuizHandle = () => {
+	window.location.reload();
+	restartValues();
+};
+
+const restartValues = () => {
+	let questions_count = 0;
+	let questions_numb = 1;
+	let timeValue = 15;
+	let timelineWidth = 0;
+	let userScore = 0;
+	showQuestions(questions_count);
+	handleCounter(questions_numb);
+	clearInterval(clock);
+	startTimer(timeValue);
+	clearInterval(clockLine);
+	startTimerLine(timelineWidth);
+	nextButton.style.visibility = 'hidden';
+	quizBox.classList.add('activeQuiz');
+	result.classList.remove('activeResult');
+};
+
 //----------------------------------------------------------------
 //----------------------------------------------------------------
 //----------------------------------------------------------------
@@ -163,3 +204,5 @@ startQuizButton.addEventListener('click', startQuiz);
 quitButton.addEventListener('click', quitQuiz);
 continueButton.addEventListener('click', playQuiz);
 nextButton.addEventListener('click', handleNext);
+replayButton.addEventListener('click', replayQuizHandle);
+quitAllButton.addEventListener('click', quitQuizHandle);
