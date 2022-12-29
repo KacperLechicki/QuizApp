@@ -408,6 +408,7 @@ body {
   font-weight: bold;
 }
 .quiz-box footer button {
+  display: none;
   text-align: center;
   color: var(--darkBlue);
   background-color: var(--white);

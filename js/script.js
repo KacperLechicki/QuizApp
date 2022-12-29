@@ -39,6 +39,8 @@ const handleCounter = (index) => {
 
 //if next button is clicked
 const handleNext = () => {
+	nextButton.style.display = 'none';
+
 	if (questions_count < questions.length - 1) {
 		questions_count++;
 		questions_numb++;
@@ -110,15 +112,14 @@ const optionSelected = (answer) => {
 
 	//disable options after users choice
 	for (let i = 0; i < allOptions; i++) {
-		optionList.children[i].classList.add('disabled');
-	}
-
-	for (let i = 0; i < allOptions; i++) {
 		if (optionList.children[i].textContent == correctAnswer) {
 			optionList.children[i].setAttribute('class', 'option correct');
 			optionList.children[i].insertAdjacentHTML('beforeend', checkIcon);
 		}
+		optionList.children[i].classList.add('disabled');
 	}
+
+	nextButton.style.display = 'block';
 };
 
 const startTimer = (time) => {

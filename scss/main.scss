@@ -270,6 +270,7 @@
 		}
 
 		button {
+			display: none;
 			@include button;
 			padding: 7px 14px;
 			font-size: 1.4rem;
