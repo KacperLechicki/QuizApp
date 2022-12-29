@@ -253,7 +253,7 @@ body {
   border-radius: 12px;
   box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.468);
   padding: 0;
-  height: 450px;
+  min-height: 450px;
   opacity: 0;
   pointer-events: none;
   transform: translate(-50%, -50%) scale(0.9);
@@ -395,11 +395,12 @@ body {
 }
 .quiz-box footer {
   position: absolute;
+  margin-top: 20px;
   bottom: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding: 0 30px;
   width: 100%;
 }
