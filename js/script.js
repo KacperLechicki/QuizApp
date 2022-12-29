@@ -16,6 +16,7 @@ const checkIcon = '<div class="icon check"><i class="fas fa-check"></i></div>';
 const crossIcon = '<div class="icon cross"><i class="fas fa-times"></i></div>';
 const timerCount = document.querySelector('.timer-sec');
 const timeline = document.querySelector('.timeline');
+const timeOff = document.querySelector('.time-text');
 const result = document.querySelector('.result-box');
 
 // lets
@@ -54,8 +55,10 @@ const handleNext = () => {
 		startTimer(timeValue);
 		clearInterval(clockLine);
 		startTimerLine(timelineWidth);
+		timeOff.textContent = 'Time left:';
 	} else {
-		console.log('Quiz completed');
+		clearInterval(clock);
+		clearInterval(clockLine);
 		showResultBox();
 	}
 };
@@ -143,6 +146,19 @@ const startTimer = (time) => {
 		if (time < 0) {
 			clearInterval(clock);
 			timerCount.textContent = '00';
+
+			let correctAnswer = questions[questions_count].answer;
+			let allOptions = optionList.children.length;
+
+			for (let i = 0; i < allOptions; i++) {
+				if (optionList.children[i].textContent == correctAnswer) {
+					optionList.children[i].setAttribute('class', 'option correct');
+					optionList.children[i].insertAdjacentHTML('beforeend', checkIcon);
+				}
+				optionList.children[i].classList.add('disabled');
+			}
+			nextButton.style.visibility = 'visible';
+			timeOff.textContent = 'Time is off';
 		}
 	}
 };
@@ -192,6 +208,7 @@ const restartValues = () => {
 	clearInterval(clockLine);
 	startTimerLine(timelineWidth);
 	nextButton.style.visibility = 'hidden';
+	timeOff.textContent = 'Time left:';
 };
 
 //----------------------------------------------------------------
