@@ -113,6 +113,7 @@
 
 	header {
 		@include titleHeader;
+		position: relative;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -135,7 +136,10 @@
 		.timer {
 			display: flex;
 			align-items: center;
+			justify-content: center;
 			padding: 4px 10px;
+			font-size: 1.4rem;
+			font-weight: bold;
 			background-color: var(--lightBlue);
 			border-radius: 6px;
 
@@ -144,8 +148,11 @@
 			}
 
 			&-sec {
-				margin-left: 8px;
-				padding: 1px 8px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-left: 10px;
+				padding: 0 4px;
 				min-width: 35px;
 				min-height: 25px;
 				text-align: center;
@@ -153,6 +160,15 @@
 				background-color: var(--darkBlue);
 				border-radius: 4px;
 			}
+
+		}
+		.timeline {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 50%;
+			height: 3px;
+			background-color: var(--darkBlue);
 		}
 	}
 

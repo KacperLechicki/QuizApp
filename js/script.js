@@ -18,7 +18,7 @@ const timerCount = document.querySelector('.timer-sec');
 let questions_count = 0;
 let questions_numb = 1;
 let clock;
-let timeValue = 10;
+let timeValue = 15;
 
 //----------------------------------------------------------------
 //----------------------------------------------------------------
@@ -64,7 +64,7 @@ const playQuiz = () => {
 	infoBox.classList.remove('activeInfo');
 	showQuestions(0);
 	handleCounter(1);
-	startTimer(10);
+	startTimer(timeValue);
 };
 
 //getting questions and options from array
@@ -87,6 +87,8 @@ const showQuestions = (index) => {
 };
 
 const optionSelected = (answer) => {
+	clearInterval(clock);
+
 	let userAnswer = answer.textContent;
 	let correctAnswer = questions[questions_count].answer;
 	let allOptions = optionList.children.length;

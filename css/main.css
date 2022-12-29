@@ -270,6 +270,7 @@ body {
   margin-bottom: 10px;
   height: 40px;
   font-size: 2rem;
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -291,7 +292,10 @@ body {
 .quiz-box header .timer {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 4px 10px;
+  font-size: 1.4rem;
+  font-weight: bold;
   background-color: var(--lightBlue);
   border-radius: 6px;
 }
@@ -302,14 +306,25 @@ body {
           user-select: none;
 }
 .quiz-box header .timer-sec {
-  margin-left: 8px;
-  padding: 1px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  padding: 0 4px;
   min-width: 35px;
   min-height: 25px;
   text-align: center;
   color: var(--lightBlue);
   background-color: var(--darkBlue);
   border-radius: 4px;
+}
+.quiz-box header .timeline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 3px;
+  background-color: var(--darkBlue);
 }
 .quiz-box section {
   margin-bottom: 5px;
