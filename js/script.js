@@ -15,7 +15,6 @@ const optionList = document.querySelector('.option-list');
 const checkIcon = '<div class="icon check"><i class="fas fa-check"></i></div>';
 const crossIcon = '<div class="icon cross"><i class="fas fa-times"></i></div>';
 const timerCount = document.querySelector('.timer-sec');
-const timeline = document.querySelector('.timeline');
 const timeOff = document.querySelector('.time-text');
 const result = document.querySelector('.result-box');
 
@@ -23,9 +22,7 @@ const result = document.querySelector('.result-box');
 let questions_count = 0;
 let questions_numb = 1;
 let clock;
-let clockLine;
 let timeValue = 15;
-let timelineWidth = 0;
 let userScore = 0;
 
 //----------------------------------------------------------------
@@ -53,7 +50,6 @@ const handleNext = () => {
 		handleCounter(questions_numb);
 		clearInterval(clock);
 		startTimer(timeValue);
-		clearInterval(clockLine);
 		startTimerLine(timelineWidth);
 		timeOff.textContent = 'Time left:';
 	} else {
@@ -81,7 +77,6 @@ const playQuiz = () => {
 	showQuestions(questions_count);
 	handleCounter(questions_numb);
 	startTimer(timeValue);
-	clearInterval(clockLine);
 	startTimerLine(timelineWidth);
 };
 
@@ -106,7 +101,6 @@ const showQuestions = (index) => {
 
 const optionSelected = (answer) => {
 	clearInterval(clock);
-	clearInterval(clockLine);
 
 	let userAnswer = answer.textContent;
 	let correctAnswer = questions[questions_count].answer;
@@ -159,19 +153,6 @@ const startTimer = (time) => {
 			}
 			nextButton.style.visibility = 'visible';
 			timeOff.textContent = 'Time is off';
-		}
-	}
-};
-
-const startTimerLine = (time) => {
-	clockLine = setInterval(timer, 29);
-
-	function timer() {
-		time += 1;
-		timeline.style.width = time + 'px';
-
-		if (time > 549) {
-			clearInterval(clockLine);
 		}
 	}
 };
