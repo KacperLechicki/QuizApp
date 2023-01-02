@@ -50,11 +50,9 @@ const handleNext = () => {
 		handleCounter(questions_numb);
 		clearInterval(clock);
 		startTimer(timeValue);
-		startTimerLine(timelineWidth);
 		timeOff.textContent = 'Time left:';
 	} else {
 		clearInterval(clock);
-		clearInterval(clockLine);
 		showResultBox();
 	}
 };
@@ -77,7 +75,6 @@ const playQuiz = () => {
 	showQuestions(questions_count);
 	handleCounter(questions_numb);
 	startTimer(timeValue);
-	startTimerLine(timelineWidth);
 };
 
 //getting questions and options from array
@@ -180,14 +177,11 @@ const restartValues = () => {
 	questions_count = 0;
 	questions_numb = 1;
 	timeValue = 15;
-	timelineWidth = 0;
 	userScore = 0;
 	showQuestions(questions_count);
 	handleCounter(questions_numb);
 	clearInterval(clock);
 	startTimer(timeValue);
-	clearInterval(clockLine);
-	startTimerLine(timelineWidth);
 	nextButton.style.visibility = 'hidden';
 	timeOff.textContent = 'Time left:';
 };
